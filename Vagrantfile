@@ -72,9 +72,9 @@ Vagrant.configure("2") do |config|
   # }
   config.vm.provision :puppet do |puppet|
 	# Autoload and make available the openldap module and stdlib
-  	puppet.module_path = "modules"
-    puppet.manifests_path = "manifests"
-    puppet.manifest_file = "default.pp"
+	puppet.module_path = "puppet/modules"
+	puppet.manifests_path = "puppet/manifests"
+	puppet.manifest_file = "default.pp"
 	# Enable verbose logging if you are having trouble
 	# puppet.options = "--verbose --debug"
   end
