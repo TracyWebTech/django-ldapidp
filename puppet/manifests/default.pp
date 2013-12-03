@@ -17,6 +17,16 @@ ldap::define::domain {'puppetlabs.test':
   auth_who => 'anonymous'
 }
 
+# links virtualenvwrapper to load automaticaly
+file { '/etc/bash_completion.d/virtualenvwrapper.sh':
+  ensure => link,
+  target => '/usr/local/bin/virtualenvwrapper.sh',
+}
+
+package { 'phpldapadmin':
+  ensure => installed,
+}
+
 # req to install python pkgs
 package { 'python-pip':
   ensure => installed,
